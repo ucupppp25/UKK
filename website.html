@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aesthetic Dark UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      overflow-x: hidden;
+      transition: transform 0.7s ease;
+    }
+
+    .glow {
+      box-shadow: 0 0 20px rgba(99,102,241,0.6);
+    }
+
+    .slide-right {
+      transform: translateX(100%);
+    }
+
+    /* 🔥 ANIMATED BACKGROUND */
+    @keyframes float1 {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(200px, 150px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes float2 {
+      0% { transform: translate(300px, 100px); }
+      50% { transform: translate(-100px, 200px); }
+      100% { transform: translate(300px, 100px); }
+    }
+
+    @keyframes float3 {
+      0% { transform: translate(-200px, -100px); }
+      50% { transform: translate(100px, -200px); }
+      100% { transform: translate(-200px, -100px); }
+    }
+
+    .animate-float1 {
+      animation: float1 12s ease-in-out infinite;
+    }
+
+    .animate-float2 {
+      animation: float2 15s ease-in-out infinite;
+    }
+
+    .animate-float3 {
+      animation: float3 18s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="text-white" id="mainBody">
+
+  <!-- 🔥 Animated Background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute w-72 h-72 bg-indigo-500 rounded-full blur-3xl opacity-20 animate-float1"></div>
+    <div class="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-20 animate-float2"></div>
+    <div class="absolute w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-20 animate-float3"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="flex justify-center items-center p-6">
+    <h1 class="text-xl font-bold text-indigo-400">MyPage</h1>
+  </nav>
+
+  <!-- Hero -->
+  <section class="flex flex-col items-center justify-center text-center mt-32 px-6">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+      Welcome to <span class="text-indigo-400">My Website</span>
+    </h2>
+    <p class="text-gray-400 max-w-xl mb-6">
+      Website simple, keren, dan estetik.
+    </p>
+
+    <button onclick="goNext()" class="px-6 py-3 bg-indigo-500 rounded-full hover:bg-indigo-600 transition glow">
+      Get Started
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center mt-40 p-6 text-gray-500">
+    © 2026 - Dibuat dengan ❤️
+  </footer>
+
+  <script>
+    function goNext() {
+      const body = document.getElementById("mainBody");
+      body.classList.add("slide-right");
+
+      setTimeout(() => {
+        window.location.href = "nxt.html";
+      }, 700);
+    }
+  </script>
+
+</body>
+</html>
